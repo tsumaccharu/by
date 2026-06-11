@@ -13,7 +13,7 @@ header {
 
 .material-symbols-outlined {
     font-size: 32px;
-    color: #6f8f8c;
+    color: #1d1d1d;
 }
 
 .hero {
@@ -23,6 +23,10 @@ header {
     align-items: center;
     gap: 160px;
     padding: 40px 8vw;
+}
+
+.hero-mobile {
+    display: none;
 }
 
 .hero h1 {
@@ -40,17 +44,19 @@ header {
     color: #222;
     margin-bottom: 18px;
 }
+
 .pickup {
     color: #4f7f78;
     font-weight: bold;
 }
+
 .hero p {
     margin-top: 24px;
     font-size: 22px;
     color: #666;
 }
 
-.hero img {
+.hero-desktop {
     width: min(42vw, 550px);
     height: 450px;
     object-fit: cover;
@@ -114,6 +120,10 @@ h2 {
     transition: 0.3s;
 }
 
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
 h3 {
     text-align: center;
     font-size: 24px;
@@ -160,12 +170,7 @@ h3 {
     transition: 0.3s;
 }
 
-.tel-btn {
-    color: #ffffff;
-    background: linear-gradient(135deg, #86603c, #c19a6b);
-    box-shadow: 0 10px 22px rgba(134, 96, 60, 0.25);
-}
-
+.tel-btn,
 .mail-btn {
     color: #ffffff;
     background: linear-gradient(135deg, #86603c, #c19a6b);
@@ -193,7 +198,7 @@ small {
         padding: 60px 6vw;
     }
 
-    .hero img {
+    .hero-desktop {
         width: min(45vw, 420px);
         height: 380px;
     }
@@ -216,20 +221,26 @@ small {
     .hero {
         min-height: auto;
         flex-direction: column;
-        gap: 36px;
-        padding: 56px 6vw 70px;
+        gap: 0;
+        padding: 0 0 70px;
         text-align: center;
     }
 
-    .hero-text {
-        order: 2;
+    .hero-mobile {
+        display: block;
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        object-position: center 35%;
+        margin-bottom: 44px;
     }
 
-    .hero img {
-        order: 1;
-        width: min(86vw, 360px);
-        height: 320px;
-        border-radius: 42% 58% 48% 52% / 55% 45% 55% 45%;
+    .hero-desktop {
+        display: none;
+    }
+
+    .hero-text {
+        padding: 0 6vw;
     }
 
     .catch {
@@ -302,13 +313,8 @@ small {
 }
 
 @media (max-width: 480px) {
-    .hero {
-        padding-top: 44px;
-    }
-
-    .hero img {
-        width: 88vw;
-        height: 260px;
+    .hero-mobile {
+        height: 210px;
     }
 
     .catch {
